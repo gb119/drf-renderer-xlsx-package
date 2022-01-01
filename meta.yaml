@@ -19,6 +19,7 @@ requirements:
     - openpyxl >=2.4
     - pip
     - python
+    - setuptools_scm
   run:
     - djangorestframework >=3.6
     - openpyxl >=2.4
