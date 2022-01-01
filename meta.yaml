@@ -1,0 +1,42 @@
+{% set name = "drf-renderer-xlsx" %}
+{% set version = "0.4.4" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: ca9667a62c9b4d24c4b48799c54d11b7a0e8fe3870437310bc29952c17e7b91d
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - djangorestframework >=3.6
+    - openpyxl >=2.4
+    - pip
+    - python
+  run:
+    - djangorestframework >=3.6
+    - openpyxl >=2.4
+    - python
+
+test:
+  imports:
+    - drf_renderer_xlsx
+
+about:
+  home: "https://github.com/wharton/drf-renderer-xlsx"
+  license: BSD
+  license_family: BSD
+  license_file: LICENSE
+  summary: "Django REST Framework renderer for spreadsheet (xlsx) files."
+  doc_url: https://github.com/wharton/drf-renderer-xlsx
+  dev_url: https://github.com/wharton/drf-renderer-xlsx
+
+extra:
+  recipe-maintainers:
+    - https://github.com/gb119
